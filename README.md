@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cibernox/ember-text-measurer.svg?branch=dummy-branch)](https://travis-ci.org/cibernox/ember-text-measurer)
+
 # Ember-text-measurer
 
 This addon provides a very simple service to measure the width of a string
