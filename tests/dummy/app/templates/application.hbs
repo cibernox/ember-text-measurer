@@ -4,6 +4,11 @@
   using an in-memory canvas, so it doesn't cause any layout reflow for max
   performance.
 </p>
+<p>
+  Although the service is quite simple and you could implement it yourself,
+  using this addon from withing another addons will ensure that there is only
+  one singleton canvas in each app, that is shared across all components, addons and engines.
+</p>
 
 <h3>Demo</h3>
 
@@ -12,8 +17,13 @@
 <input type="text" id="demo-1" style={{demo1Style}} value={{demo1text}} oninput={{action (mut demo1text) value="target.value"}}>
 
 <p>
-  Another posible usafe is to calculate the ideal font size to make a text
-  fill an element completely.
+  Another posible usage is to calculate the ideal font size to make a text
+  fill the available space entirely.
+</p>
+
+<p>
+  The range datepicker below sets the width of the div and the font-size to fully fill that
+  space is calculated on the canvas.
 </p>
 
 <input type="text" id="demo-1" value={{demo2text}} oninput={{action (mut demo2text) value="target.value"}}>
