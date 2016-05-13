@@ -1,0 +1,26 @@
+<h1>Ember-text-measurer</h1>
+<p>
+  This addon provides a very simple service to measure the width of a string
+  using an in-memory canvas, so it doesn't cause any layout reflow for max
+  performance.
+</p>
+
+<h3>Demo</h3>
+
+<p>One possible usage of this is to make an input grow as you type:</p>
+
+<input type="text" id="demo-1" style={{demo1Style}} value={{demo1text}} oninput={{action (mut demo1text) value="target.value"}}>
+
+<p>
+  Another posible usafe is to calculate the ideal font size to make a text
+  fill an element completely.
+</p>
+
+<input type="text" id="demo-1" value={{demo2text}} oninput={{action (mut demo2text) value="target.value"}}>
+<input type="range" min="80" max="1280" value={{demo2width}} oninput={{action (mut demo2width) value="target.value"}}>
+
+<div id="demo-2" style={{demo2Style}}>{{demo2text}}</div>
+
+<p>
+  All at 60fps :D
+</p>

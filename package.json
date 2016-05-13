@@ -11,11 +11,14 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/cibernox/ember-text-measurer.git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Miguel Camba",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
@@ -36,11 +39,13 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
-    "ember-welcome-page": "^1.0.1",
     "loader.js": "^4.0.1"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "measure",
+    "text",
+    "canvas"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6"

@@ -1,0 +1,17 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+#demo-1 {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  min-width: 15px;
+}
+
+#demo-2 {
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+  border: 1px solid lightgray;
+  height: 300px;
+}
