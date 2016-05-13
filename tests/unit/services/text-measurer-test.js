@@ -16,14 +16,14 @@ moduleFor('service:text-measurer', 'Unit | Service | text measurer');
 
 test('#measure receives a string and returns its width', function(assert) {
   let service = this.subject();
-  assert.equal(decimalRound(service.measure('foobar'), 1), 32);
-  assert.equal(decimalRound(service.measure('iiiiii'), 1), 18);
-  assert.equal(decimalRound(service.measure('mmmmmm'), 1), 60);
+  assert.equal(decimalRound(service.width('foobar'), 1), 32);
+  assert.equal(decimalRound(service.width('iiiiii'), 1), 18);
+  assert.equal(decimalRound(service.width('mmmmmm'), 1), 60);
 });
 
 test('#measure optionally accepts a font definition to apply to the string being measured', function(assert) {
   let service = this.subject();
-  assert.equal(decimalRound(service.measure('foobar', 'normal 24px Helvetica'), 1), 67);
-  assert.equal(decimalRound(service.measure('foobar', 'normal 20px Helvetica'), 1), 57);
-  assert.equal(decimalRound(service.measure('foobar', 'normal 20px Times'), 1), 53);
+  assert.equal(decimalRound(service.width('foobar', 'normal 24px Helvetica'), 1), 67);
+  assert.equal(decimalRound(service.width('foobar', 'normal 20px Helvetica'), 1), 57);
+  assert.equal(decimalRound(service.width('foobar', 'normal 20px Times'), 1), 53);
 });

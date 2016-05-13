@@ -13,13 +13,13 @@ performance.
 ### Usage
 
 This addon just provides a service that you can inject wherever you need.
-The service has one single method `measure(string, font = null)` that will
-return the width of the text.
+The service for now has one single method `width(string, font = null)` that will
+return the width of the text with the given font information.
 
 ```js
-textMeasurer.measure('foobar', '24px arial');             // ~ 68.02px
-textMeasurer.measure('foobar', '20px arial');             // ~ 56.64px
-textMeasurer.measure('foobar', '20px Times New Roman');   // ~ 52.19px
+textMeasurer.width('foobar', '24px Arial');             // ~ 68.02px
+textMeasurer.width('foobar', '20px Arial');             // ~ 56.64px
+textMeasurer.width('foobar', '20px Times New Roman');   // ~ 52.19px
 ```
 
 ### What can I do with this?
