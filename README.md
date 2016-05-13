@@ -22,7 +22,7 @@ textMeasurer.measure('foobar', '20px Times New Roman');   // ~ 52.19px
 
 ### What can I do with this?
 
-Check [THE DEMO](https://ember-text-measurer.pagefrontapp.com) for some simple ideas ;-)
+Check [THE DEMO](https://ember-text-measurer.pagefrontapp.com) for some ideas ;-)
 
 ### Browser compatibility
 
