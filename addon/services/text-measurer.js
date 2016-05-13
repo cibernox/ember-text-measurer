@@ -7,7 +7,7 @@ export default Ember.Service.extend({
     this.ctx = this.canvas.getContext('2d');
   },
 
-  measure(string, font = null) {
+  width(string, font = null) {
     if (font) {
       this.ctx.font = font;
     }
