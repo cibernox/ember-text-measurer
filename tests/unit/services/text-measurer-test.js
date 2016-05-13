@@ -5,6 +5,15 @@ function decimalRound(number, decimals = 0) {
   return Math.round(number * factor) / factor;
 }
 
+const sampleMultilineText = `Lorem
+ipsum dolor sit amet, ex legimus mandamus sea, qui no doctus option. Ei pri commune maiestatis. Mea at facete appetere tincidunt. Et sea quaestio expetendis. No eius virtute delenit per.
+
+
+
+Ea mel error latine, usu harum delicata forensibus id, ut est probo quodsi regione. Sumo definitiones ex has, percipit voluptatum an qui. Eius solet aeterno sea ut, qui ex inani persequeris. In nostro facilis consetetur mea. Ut audiam virtute nostrum eam, omnes luptatum splendide eam at.
+
+Veri zril ex vel, pri habemus delicata et. Te minimum expetenda dissentiet est, homero omnium expetenda no pri, enim fuisset usu ei. Mel ex quidam scripserit, pri aliquip debitis id. Vis ea legere persius recteque, utamur blandit volutpat ea vel.`;
+
 moduleFor('service:text-measurer', 'Unit | Service | text measurer');
 
 // Note: The actual results of this tests vary from browser to browser depending
@@ -14,16 +23,23 @@ moduleFor('service:text-measurer', 'Unit | Service | text measurer');
 // Those numbers are correct for Firefox in Ubuntu, but it is expected that
 // running these tests in a different browser/OS will fail.
 
-test('#measure receives a string and returns its width', function(assert) {
+test('#width receives a string and returns its width', function(assert) {
   let service = this.subject();
   assert.equal(decimalRound(service.width('foobar'), 1), 32);
   assert.equal(decimalRound(service.width('iiiiii'), 1), 18);
   assert.equal(decimalRound(service.width('mmmmmm'), 1), 60);
 });
 
-test('#measure optionally accepts a font definition to apply to the string being measured', function(assert) {
+test('#width optionally accepts a font definition to apply to the string being measured', function(assert) {
   let service = this.subject();
   assert.equal(decimalRound(service.width('foobar', 'normal 24px Helvetica'), 1), 67);
   assert.equal(decimalRound(service.width('foobar', 'normal 20px Helvetica'), 1), 57);
   assert.equal(decimalRound(service.width('foobar', 'normal 20px Times'), 1), 53);
+});
+
+test('#lines(string, width, font?) returns the number of lines that a text would require in the given width', function(assert) {
+  let service = this.subject();
+  assert.equal(service.lines(sampleMultilineText, 400, 'normal 24px Helvetica'), 27);
+  assert.equal(service.lines(sampleMultilineText, 600, 'normal 24px Helvetica'), 20);
+  assert.equal(service.lines(sampleMultilineText, 600, 'normal 14px Helvetica'), 15);
 });
