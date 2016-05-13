@@ -33,8 +33,8 @@ probably not innacurate enough to be a problem.
 
 ### Caveats
 
-- It doesn't work in Fastboot because there no canvas support there. If you are very interested in
-  this feature, it is proably doable relying in some library like [node-canvas](https://github.com/Automattic/node-canvas)
+- It doesn't work in Fastboot because there's no canvas support in node. If you are very interested in
+  this feature, it is proably doable using in some library like [node-canvas](https://github.com/Automattic/node-canvas)
   PRs welcomed.
 - If you are using a custom font and you perform the measurement before it is fully loaded,
   the result will be innacurate.
