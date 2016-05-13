@@ -29,7 +29,6 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
   - npm config set spin false
   - npm install -g bower
-  - npm install -g phantomjs-prebuilt@2
 
 install:
   - npm install
