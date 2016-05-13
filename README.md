@@ -30,3 +30,11 @@ Check [THE DEMO](https://ember-text-measurer.pagefrontapp.com) for some ideas ;-
 
 Pretty good, in theory all back to IE9, although IE9 might give slightly unnacurate results,
 probably not innacurate enough to be a problem.
+
+### Caveats
+
+- It doesn't work in Fastboot because there no canvas support there. If you are very interested in
+  this feature, it is proably doable relying in some library like [node-canvas](https://github.com/Automattic/node-canvas)
+  PRs welcomed.
+- If you are using a custom font and you perform the measurement before it is fully loaded,
+  the result will be innacurate.
