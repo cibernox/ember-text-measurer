@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cibernox/ember-text-measurer.svg?branch=dummy-branch)](https://travis-ci.org/cibernox/ember-text-measurer)
+
 # Ember-text-measurer
 
 This addon provides a very simple service to measure the width of a string
@@ -22,7 +24,7 @@ textMeasurer.measure('foobar', '20px Times New Roman');   // ~ 52.19px
 
 ### What can I do with this?
 
-Check [THE DEMO](https://ember-text-measurer.pagefrontapp.com) for some simple ideas ;-)
+Check [THE DEMO](https://ember-text-measurer.pagefrontapp.com) for some ideas ;-)
 
 ### Browser compatibility
 

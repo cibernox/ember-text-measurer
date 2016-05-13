@@ -9,6 +9,9 @@ cache:
   directories:
     - node_modules
 
+addons:
+  firefox: "latest"
+
 env:
   - EMBER_TRY_SCENARIO=default
   - EMBER_TRY_SCENARIO=ember-1.13
@@ -22,9 +25,10 @@ matrix:
     - env: EMBER_TRY_SCENARIO=ember-canary
 
 before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
   - npm config set spin false
   - npm install -g bower
-  - npm install phantomjs-prebuilt
 
 install:
   - npm install

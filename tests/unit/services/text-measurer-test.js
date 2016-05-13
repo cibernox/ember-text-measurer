@@ -11,19 +11,19 @@ moduleFor('service:text-measurer', 'Unit | Service | text measurer');
 // on the default font family, size, kerning and also on antialiasing and other
 // dark magic.
 //
-// Those numbers are correct for phantomjs 2.1, but it is expected that
-// running these tests in a different browser will fail.
+// Those numbers are correct for Firefox in Ubuntu, but it is expected that
+// running these tests in a different browser/OS will fail.
 
 test('#measure receives a string and returns its width', function(assert) {
   let service = this.subject();
-  assert.equal(decimalRound(service.measure('foobar'), 2), 31.83);
-  assert.equal(decimalRound(service.measure('iiiiii'), 2), 17.34);
-  assert.equal(decimalRound(service.measure('mmmmmm'), 2), 55.97);
+  assert.equal(decimalRound(service.measure('foobar'), 1), 32);
+  assert.equal(decimalRound(service.measure('iiiiii'), 1), 18);
+  assert.equal(decimalRound(service.measure('mmmmmm'), 1), 60);
 });
 
 test('#measure optionally accepts a font definition to apply to the string being measured', function(assert) {
   let service = this.subject();
-  assert.equal(decimalRound(service.measure('foobar', '24px arial'), 2), 68.02);
-  assert.equal(decimalRound(service.measure('foobar', '20px arial'), 2), 56.64);
-  assert.equal(decimalRound(service.measure('foobar', '20px Times new roman'), 2), 52.19);
+  assert.equal(decimalRound(service.measure('foobar', 'normal 24px Helvetica'), 1), 67);
+  assert.equal(decimalRound(service.measure('foobar', 'normal 20px Helvetica'), 1), 57);
+  assert.equal(decimalRound(service.measure('foobar', 'normal 20px Times'), 1), 53);
 });
