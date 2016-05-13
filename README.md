@@ -1,26 +1,30 @@
 # Ember-text-measurer
 
-This README outlines the details of collaborating on this Ember addon.
+This addon provides a very simple service to measure the width of a string
+using an in-memory canvas, so it doesn't cause any layout reflow for max
+performance.
 
-## Installation
+### Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-text-measurer`
 
-## Running
+### Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+This addon just provides a service that you can inject wherever you need.
+The service has one single method `measure(string, font = null)` that will
+return the width of the text.
 
-## Running Tests
+```js
+textMeasurer.measure('foobar', '24px arial');             // ~ 68.02px
+textMeasurer.measure('foobar', '20px arial');             // ~ 56.64px
+textMeasurer.measure('foobar', '20px Times New Roman');   // ~ 52.19px
+```
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+### What can I do with this?
 
-## Building
+Check [THE DEMO](https://ember-text-measurer.pagefrontapp.com) for some ideas ;-)
 
-* `ember build`
+### Browser compatibility
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+Pretty good, in theory all back to IE9, although IE9 might give slightly unnacurate results,
+probably not innacurate enough to be a problem.

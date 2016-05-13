@@ -1,5 +1,5 @@
 import Ember from 'ember';
-const { Controller, String: { htmlSafe }, inject: { service }, computed } = Ember
+const { Controller, String: { htmlSafe }, inject: { service }, computed } = Ember;
 
 export default Controller.extend({
   textMeasurer: service(),
@@ -15,7 +15,7 @@ export default Controller.extend({
   }),
 
   demo2Style: computed('demo2text', 'demo2width', function() {
-    let { demo2text, demo2width, textMeasurer: measurer } = this.getProperties('demo2text', 'demo2width', 'textMeasurer')
+    let { demo2text, demo2width, textMeasurer: measurer } = this.getProperties('demo2text', 'demo2width', 'textMeasurer');
     let width = measurer.measure(demo2text, '16px Arial');
     let ratio = (demo2width - 4) / width;
     return htmlSafe(`width: ${demo2width}px; font-size: ${16 * ratio}px;`);
