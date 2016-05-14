@@ -13,14 +13,37 @@ performance.
 ### Usage
 
 This addon just provides a service that you can inject wherever you need.
-The service for now has one single method `width(string, font = null)` that will
-return the width of the text with the given font information.
+
+The service for now has two methods:
+
+* `width(string, font = null)` will return the width of the text with the given font information.
 
 ```js
 textMeasurer.width('foobar', '24px Arial');             // ~ 68.02px
 textMeasurer.width('foobar', '20px Arial');             // ~ 56.64px
 textMeasurer.width('foobar', '20px Times New Roman');   // ~ 52.19px
 ```
+
+* `lines(string, width, font = null)` will return the number of lines that this text would
+  require when rendered in a container of the given width with the given font.
+
+```js
+const sampleMultilineText = `Lorem
+ipsum dolor sit amet, ex legimus mandamus sea, qui no doctus option. Ei pri commune maiestatis. Mea at facete appetere tincidunt. Et sea quaestio expetendis. No eius virtute delenit per.
+
+
+Ea mel error latine, usu harum delicata forensibus id, ut est probo quodsi regione. Sumo definitiones ex has, percipit voluptatum an qui. Eius solet aeterno sea ut, qui ex inani persequeris. In nostro facilis consetetur mea. Ut audiam virtute nostrum eam, omnes luptatum splendide eam at.
+
+Veri zril ex vel, pri habemus delicata et. Te minimum expetenda dissentiet est, homero omnium expetenda no pri, enim fuisset usu ei. Mel ex quidam scripserit, pri aliquip debitis id. Vis ea legere persius recteque, utamur blandit volutpat ea vel.`;
+
+textMeasurer.lines(sampleMultilineText, 400, 'normal 24px Helvetica'); // 26 lines
+textMeasurer.lines(sampleMultilineText, 600, 'normal 24px Helvetica'); // 19 lines
+textMeasurer.lines(sampleMultilineText, 600, 'normal 14px Helvetica'); // 14 lines
+```
+
+_Please note than measuring the lines is significantly more expensive than measuting the width
+and might take a non-negligible amount of time when performed on text over a few thousands words, and
+results might not be accurate on browsers that don't have subpixel precission on text measurements_
 
 ### What can I do with this?
 

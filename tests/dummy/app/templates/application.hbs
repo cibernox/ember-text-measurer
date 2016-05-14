@@ -32,5 +32,16 @@
 <div id="demo-2" style={{demo2Style}}>{{demo2text}}</div>
 
 <p>
-  All at 60fps :D
+  You can also use the <code>lines</code> method to approximate the number of lines a text will
+  require on a textarea, perhaps to make it grow automatically.
 </p>
+<textarea rows={{demo3lines}} value={{demo3text}} oninput={{action (mut demo3text) value="target.value"}} style="padding: 0; width: 300px; resize: none;"></textarea>
+<p>The number of lines is: {{demo3lines}}</p>
+
+<em>
+  Please note than measuring lines is a far more expensive calculation
+  than measuring width.
+  While still pretty fast, texts over a few thousand words might take a noticiable
+  time.
+</em>
+

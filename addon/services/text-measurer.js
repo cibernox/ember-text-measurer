@@ -8,9 +8,36 @@ export default Ember.Service.extend({
   },
 
   width(string, font = null) {
-    if (font) {
-      this.ctx.font = font;
-    }
+    if (font) { this.ctx.font = font; }
     return this.ctx.measureText(string).width;
+  },
+
+  lines(string, maxWidth, font = null) {
+    if (font) { this.ctx.font = font; }
+    let paragraphs = string.split(/\n/);
+    let lines = paragraphs.length;
+    for (let i = 0; i < paragraphs.length; i++) {
+      let paragraph = paragraphs[i];
+      if (paragraph !== '') {
+        let words = paragraph.split(' ');
+        let widthSoFar = 0;
+        let j = 0;
+        for (; j < words.length - 1; j++) {
+          let wordWidth = this.ctx.measureText(words[j] + ' ').width;
+          widthSoFar = widthSoFar + wordWidth;
+          if (widthSoFar > maxWidth) {
+            lines++;
+            widthSoFar = wordWidth;
+          }
+        }
+        let wordWidth = this.ctx.measureText(words[j]).width;
+        widthSoFar = widthSoFar + wordWidth;
+        if (widthSoFar > maxWidth) {
+          lines++;
+          widthSoFar = wordWidth;
+        }
+      }
+    }
+    return lines;
   }
 });
