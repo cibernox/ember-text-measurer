@@ -24,7 +24,8 @@ textMeasurer.width('foobar', '20px Arial');             // ~ 56.64px
 textMeasurer.width('foobar', '20px Times New Roman');   // ~ 52.19px
 ```
 
-* `fitTextSize(string, maxWidth, font = null)` will return the font size of the text with the given font information and maximum width.
+* `fitTextSize(string, width, font = null)` will return the font size with which the given text
+will fully fit in the available width with the given (option) font information.
 
 ```js
 textMeasurer.fitTextSize('foobar this is too long', 200, 'normal 24px Times'); // 22px
