@@ -32,6 +32,8 @@ textMeasurer.fitTextSize('foobar this is too long', 200, 'normal 24px Helvetica'
 textMeasurer.fitTextSize('foobar this is too long', 200, 'normal 24px Georgia'); // 20px
 ```
 
+Note: The font size passed to this method is irrelevant, the important part is the font style and family.
+
 * `lines(string, width, font = null)` will return the number of lines that this text would
   require when rendered in a container of the given width with the given font.
 
