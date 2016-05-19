@@ -14,7 +14,7 @@ performance.
 
 This addon just provides a service that you can inject wherever you need.
 
-The service for now has two methods:
+The service for now has three methods:
 
 * `width(string, font = null)` will return the width of the text with the given font information.
 
@@ -22,6 +22,14 @@ The service for now has two methods:
 textMeasurer.width('foobar', '24px Arial');             // ~ 68.02px
 textMeasurer.width('foobar', '20px Arial');             // ~ 56.64px
 textMeasurer.width('foobar', '20px Times New Roman');   // ~ 52.19px
+```
+
+* `fitTextSize(string, maxWidth, font = null)` will return the font size of the text with the given font information and maximum width.
+
+```js
+textMeasurer.fitTextSize('foobar this is too long', 200, 'normal 24px Times'); // 22px
+textMeasurer.fitTextSize('foobar this is too long', 200, 'normal 24px Helvetica'); // 21px
+textMeasurer.fitTextSize('foobar this is too long', 200, 'normal 24px Georgia'); // 20px
 ```
 
 * `lines(string, width, font = null)` will return the number of lines that this text would
