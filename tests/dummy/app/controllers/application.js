@@ -26,9 +26,8 @@ export default Controller.extend({
 
   demo2Style: computed('demo2text', 'demo2width', function() {
     let { demo2text, demo2width, textMeasurer: measurer } = this.getProperties('demo2text', 'demo2width', 'textMeasurer');
-    let width = measurer.width(demo2text, '16px Arial');
-    let ratio = (demo2width - 4) / width;
-    return htmlSafe(`width: ${demo2width}px; font-size: ${16 * ratio}px;`);
+    let size = measurer.fitTextSize(demo2text, demo2width, '24px Arial');
+    return htmlSafe(`width: ${demo2width}px; font-size: ${size}px;`);
   }),
 
   demo3lines: computed('demo3text', function() {

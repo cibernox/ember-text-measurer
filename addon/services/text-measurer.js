@@ -39,5 +39,14 @@ export default Ember.Service.extend({
       }
     }
     return lines;
+  },
+
+  fitTextSize(string, maxWidth, font = null) {
+    let width = this.width(string, font);
+    let fontSize = this.ctx.font.match(/\d+/)[0];
+    if (width > maxWidth) {
+      return Math.floor((maxWidth / width) * fontSize);
+    }
+    return fontSize;
   }
 });

@@ -43,3 +43,12 @@ test('#lines(string, width, font?) returns the number of lines that a text would
   assert.equal(service.lines(sampleMultilineText, 600, 'normal 24px Helvetica'), 20);
   assert.equal(service.lines(sampleMultilineText, 600, 'normal 14px Helvetica'), 15);
 });
+
+// This test was written on OS X 10.11.5, worked on Chrome, Safari, Firefox
+test('#fitTextSize should return correct font size on overflow', function(assert) {
+  let service = this.subject();
+  assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Times'), 1), 22);
+  assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Helvetica'), 1), 21);
+   // this will pass on Travis
+  assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Georgia'), 1), 18);
+});
