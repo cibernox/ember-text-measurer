@@ -25,16 +25,16 @@ moduleFor('service:text-measurer', 'Unit | Service | text measurer');
 
 test('#width receives a string and returns its width', function(assert) {
   let service = this.subject();
-  assert.equal(decimalRound(service.width('foobar'), 1), 32);
-  assert.equal(decimalRound(service.width('iiiiii'), 1), 18);
-  assert.equal(decimalRound(service.width('mmmmmm'), 1), 60);
+  assert.equal(decimalRound(service.width('foobar'), 1), 28.4);
+  assert.equal(decimalRound(service.width('iiiiii'), 1), 13.3);
+  assert.equal(decimalRound(service.width('mmmmmm'), 1), 50);
 });
 
 test('#width optionally accepts a font definition to apply to the string being measured', function(assert) {
   let service = this.subject();
-  assert.equal(decimalRound(service.width('foobar', 'normal 24px Helvetica'), 1), 67);
-  assert.equal(decimalRound(service.width('foobar', 'normal 20px Helvetica'), 1), 57);
-  assert.equal(decimalRound(service.width('foobar', 'normal 20px Times'), 1), 53);
+  assert.equal(decimalRound(service.width('foobar', 'normal 24px Helvetica'), 1), 68.1);
+  assert.equal(decimalRound(service.width('foobar', 'normal 20px Helvetica'), 1), 56.7);
+  assert.equal(decimalRound(service.width('foobar', 'normal 20px Times'), 1), 52.2);
 });
 
 test('#lines(string, width, font?) returns the number of lines that a text would require in the given width', function(assert) {
@@ -50,5 +50,5 @@ test('#fitTextSize should return correct font size on overflow', function(assert
   assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Times'), 1), 22);
   assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Helvetica'), 1), 21);
    // this will pass on Travis
-  assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Georgia'), 1), 18);
+  assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Georgia'), 1), 20);
 });

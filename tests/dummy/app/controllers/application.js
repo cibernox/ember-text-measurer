@@ -32,9 +32,9 @@ export default Controller.extend({
 
   demo3lines: computed('demo3text', function() {
     let { demo3text, textMeasurer: measurer } = this.getProperties('demo3text', 'textMeasurer');
-    console.time('measure');
+    // console.time('measure');
     let result = measurer.lines(demo3text, 300, "normal normal normal normal 11px / normal BlinkMacSystemFont");
-    console.timeEnd('measure');
+    // console.timeEnd('measure');
     return result;
   })
 });
