@@ -50,5 +50,5 @@ test('#fitTextSize should return correct font size on overflow', function(assert
   assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Times'), 1), 22);
   assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Helvetica'), 1), 21);
    // this will pass on Travis
-  assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Georgia'), 1), 20);
+  assert.equal(decimalRound(service.fitTextSize('foobar this is too long', 200, 'normal 24px Georgia'), 1), 22);
 });
