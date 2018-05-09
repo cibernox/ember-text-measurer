@@ -1,6 +1,6 @@
 {
   "name": "ember-text-measurer",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Ember addon with a service to calculate text dimmensions on a canvas",
   "keywords": [
     "ember-addon",
