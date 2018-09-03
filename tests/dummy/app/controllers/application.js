@@ -1,5 +1,7 @@
-import Ember from 'ember';
-const { Controller, String: { htmlSafe }, inject: { service }, computed } = Ember;
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
+import { htmlSafe } from "@ember/template";
 
 const sampleMultilineText = `Lorem
 ipsum dolor sit amet, ex legimus mandamus sea, qui no doctus option. Ei pri commune maiestatis. Mea at facete appetere tincidunt. Et sea quaestio expetendis. No eius virtute delenit per.
